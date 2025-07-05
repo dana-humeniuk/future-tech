@@ -1,0 +1,79 @@
+@use "helpers" as *;
+
+// ===================================
+// 🎨 Design Tokens System
+// ===================================
+
+:root {
+  // ===============================
+  // 🌈 COLOR PALETTE
+  // ===============================
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  // Grayscale palette
+  --gray-08: #141414;
+  --gray-opacity-08: #141414b6;
+  --gray-10: #1a1a1a;
+  --gray-15: #262626;
+  --gray-20: #333333;
+  --gray-40: #666666;
+  --gray-50: #7e7e81;
+  --gray-60: #98989a;
+
+  // Yellow palette
+  --color-accent: #ffd11a;
+  --color-red: #ff5500;
+
+  // ===============================
+  // 🔤 TYPOGRAPHY SYSTEM
+  // ===============================
+
+  // Font families
+  --font-family-base: "Inter", sans-serif;
+  --font-family-accent: "Kumbh Sans", sans-serif;
+
+  // ===============================
+  // 🎯 LAYOUT
+  // ===============================
+
+  --container-width: #{rem(1640)};
+  --container-padding-x: #{rem(20)};
+  --section-heading-padding-y: #{fluid(40, 120)};
+
+  // ===============================
+  // 🎭 BORDERS & RADIUS
+  // ===============================
+
+  --border-small: 1px;
+  --border-medium: 2px;
+  --border-large: 4px;
+
+  --border-slim-gray: #{rem(1)} solid var(--gray-15);
+  --border-slim-accent: #{rem(1)} solid var(--color-accent);
+  --border-slim-gray-darker: #{rem(1)} solid var(--gray-20);
+
+  --radius-xsm: 4px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-rounded: 50%;
+
+  // ===============================
+  // 🌟 SHADOWS
+  // ===============================
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  // ===============================
+  // ⏳ TRANSITIONS
+  // ===============================
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s ease;
+  --transition-slow: 0.6s ease;
+}

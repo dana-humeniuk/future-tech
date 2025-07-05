@@ -1,0 +1,34 @@
+@use "../helpers/" as *;
+
+.button {
+  white-space: nowrap;
+  padding: rem(18) rem(24);
+  color: var(--gray-60);
+  font-size: fluid(14, 18);
+  background-color: var(--gray-08);
+  border-radius: rem(12);
+  border: var(--border-slim-gray);
+  @include large {
+    padding: rem(14) rem(20);
+    border-radius: rem(8);
+  }
+  @include small {
+    font-size: 18px;
+    border-radius: rem(12);
+    padding: rem(14) rem(24);
+  }
+  @include hover {
+    border: var(--border-slim-accent);
+    background-color: transparent;
+    color: var(--gray-60);
+  }
+  &--accent {
+    border: var(--border-slim-accent);
+    padding: rem(14) rem(20);
+    background-color: var(--color-accent);
+    color: var(--gray-08);
+    @include large {
+      padding: rem(10) rem(14);
+    }
+  }
+}

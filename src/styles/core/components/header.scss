@@ -1,0 +1,120 @@
+@use "../helpers/" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  &.is-scrolled {
+    .header__promo {
+      padding-block: rem(10);
+      backdrop-filter: blur(14px);
+      background-color: var(--gray-opacity-08);
+    }
+    .header__body {
+      padding-block: rem(12);
+      backdrop-filter: blur(10px);
+      background-color: var(--gray-opacity-08);
+    }
+  }
+  &__promo {
+    transition: var(--transition-base);
+    background-color: var(--gray-08);
+    border-bottom: var(--border-slim-gray);
+    @include flex-center;
+    text-align: center;
+    padding-block: rem(20);
+    color: var(--gray-60);
+    @include small {
+      padding-block: rem(14);
+    }
+  }
+
+  &__body {
+    transition: var(--transition-base);
+    background-color: var(--gray-10);
+    padding-block: rem(24);
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(24);
+    }
+  }
+  &__overlay {
+    @include above-small {
+      display: contents;
+    }
+    @include small {
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background-color: var(--gray-10);
+      padding: 15rem 3rem 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: rem(48);
+      align-items: center;
+      transition: var(--transition-base);
+      &:not(.is-active) {
+        translate: 100%;
+      }
+    }
+  }
+  &__burger-button {
+    @include above-small {
+      display: none;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: rem(16);
+      @include large {
+        column-gap: rem(6);
+      }
+      @include small {
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(24);
+      }
+    }
+    &-link {
+      color: var(--gray-50);
+      font-size: rem(18);
+      padding: rem(14) rem(24);
+      @include large {
+        padding: rem(10) rem(18);
+        font-size: rem(16);
+      }
+      @include medium {
+        font-size: rem(14);
+      }
+      @include small {
+        font-size: rem(18);
+        padding: rem(14) rem(24);
+        color: var(--color-white);
+      }
+      &.is-active {
+        font-weight: 500;
+        color: var(--color-white);
+        background-color: var(--gray-08);
+        border: var(--border-slim-gray-darker);
+        border-radius: var(--radius-md);
+        pointer-events: none;
+        @include small {
+          color: var(--color-accent);
+          border: var(--border-slim-accent);
+        }
+      }
+    }
+  }
+}

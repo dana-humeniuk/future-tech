@@ -1,0 +1,106 @@
+@use "../helpers/" as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  padding: rem(50) 0;
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    .modal__content {
+      opacity: 1;
+    }
+  }
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 rem(16);
+    *::-webkit-scrollbar {
+      height: 5px;
+      width: 5px;
+    }
+    *::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: #dfe9eb;
+    }
+
+    *::-webkit-scrollbar-track:hover {
+      background-color: #b8c0c2;
+    }
+
+    *::-webkit-scrollbar-track:active {
+      background-color: #b8c0c2;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      border-radius: rem(5);
+      background-color: #343434;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      background-color: #343434;
+    }
+
+    *::-webkit-scrollbar-thumb:active {
+      background-color: #343434;
+    }
+  }
+  &__inner {
+    width: 100%;
+    max-width: rem(700);
+    max-height: max-content;
+    height: 100%;
+    overflow: auto;
+    display: inline-block;
+    border-radius: rem(20);
+  }
+  &__content {
+    padding: rem(24);
+    background-color: #fff;
+    border-radius: rem(13);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    position: relative;
+  }
+  &__title {
+    font-size: rem(20);
+    color: #626262;
+    margin-bottom: rem(12);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+  &__form {
+  }
+  &__close {
+    position: absolute;
+    right: rem(12);
+    top: rem(12);
+    @media (any-hover: hover) {
+      &:hover {
+        & svg {
+          color: rgb(179, 0, 0);
+        }
+      }
+    }
+    svg {
+      pointer-events: none;
+      width: rem(30);
+      height: rem(30);
+      color: #626262;
+    }
+  }
+}
