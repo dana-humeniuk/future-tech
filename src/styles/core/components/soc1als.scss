@@ -1,0 +1,15 @@
+@use "../helpers/" as *;
+
+.soc1als {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: fluid(14, 20);
+  }
+  &__link {
+    img {
+      width: fluid(20, 24);
+      height: fluid(20, 24);
+    }
+  }
+}

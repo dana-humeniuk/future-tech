@@ -1,1 +1,100 @@
-@use '../helpers/' as *;
+@use "../helpers/" as *;
+.footer {
+  padding-top: fluid(40, 80);
+  padding-bottom: fluid(24, 40);
+  background-color: var(--gray-08);
+  color: var(--gray-40);
+  &__body {
+    padding-bottom: fluid(40, 80);
+    border-bottom: var(--border-slim-gray);
+  }
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: rem(20);
+    align-items: start;
+
+    @include large {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: fluid(20, 48);
+    }
+    
+    @include small {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-column {
+     display: grid;
+      row-gap: fluid(16, 36);
+      &:last-child {
+        @include large {
+          grid-column: span 2;
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: fluid(8, 18);
+      &--modified {
+        @include large {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: rem(8);
+    }
+    &-main {
+      &-link {
+        color: var(--color-white);
+      }
+    }
+    &-link {
+      font-weight: 400;
+      line-height: 1.3;
+      &--button {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: fluid(24, 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+    @include medium {
+      flex-direction: column;
+      text-align: center;
+    }
+    &-soc1als {
+      @include medium {
+        order: -1;
+      }
+    }
+    &-privacy-and-terms {
+      &-list {
+        display: flex;
+
+        align-items: center;
+
+        gap: rem(10);
+      }
+      &-item {
+        &:not(:last-child) {
+          border-right: var(--border-slim-gray);
+          padding-right: rem(10);
+        }
+      }
+    }
+    &-copyright {
+      pointer-events: none;
+
+    }
+  }
+}

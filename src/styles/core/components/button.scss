@@ -12,15 +12,19 @@
     padding: rem(14) rem(20);
     border-radius: rem(8);
   }
-  @include small {
-    font-size: 18px;
-    border-radius: rem(12);
-    padding: rem(14) rem(24);
-  }
+
   @include hover {
     border: var(--border-slim-accent);
     background-color: transparent;
     color: var(--gray-60);
+  }
+
+  &--contact {
+    @include small {
+      font-size: 18px;
+      border-radius: rem(12);
+      padding: rem(14) rem(24);
+    }
   }
   &--accent {
     border: var(--border-slim-accent);
