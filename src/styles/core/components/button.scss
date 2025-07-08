@@ -1,6 +1,8 @@
 @use "../helpers/" as *;
 
 .button {
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
   padding: rem(18) rem(24);
   color: var(--gray-60);

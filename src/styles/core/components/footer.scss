@@ -18,13 +18,13 @@
       grid-template-columns: repeat(3, 1fr);
       row-gap: fluid(20, 48);
     }
-    
+
     @include small {
       grid-template-columns: repeat(2, 1fr);
     }
 
     &-column {
-     display: grid;
+      display: grid;
       row-gap: fluid(16, 36);
       &:last-child {
         @include large {
@@ -56,9 +56,6 @@
     &-link {
       font-weight: 400;
       line-height: 1.3;
-      &--button {
-        display: inline-flex;
-      }
     }
   }
 
@@ -94,7 +91,6 @@
     }
     &-copyright {
       pointer-events: none;
-
     }
   }
 }
