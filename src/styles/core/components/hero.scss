@@ -1,1 +1,89 @@
 @use "../helpers/" as *;
+
+.hero {
+  &__main {
+    @include above-large {
+      display: grid;
+      grid-template-columns: 60% auto;
+    }
+  }
+  &__body {
+    padding-top: fluid(40, 100);
+    padding-bottom: fluid(30, 50);
+    @include above-large {
+      grid-column: 1;
+      padding-top: rem(150);
+      padding-right: rem(50);
+      padding-bottom: rem(100);
+    }
+  }
+  &__subtitle {
+    font-family: var(--font-family-accent);
+    font-size: fluid(18, 30);
+    line-height: 1.2;
+    color: var(--gray-40);
+    font-weight: 500;
+    &:not(:last-child) {
+      margin-bottom: fluid(14, 30);
+    }
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: fluid(10, 20);
+    }
+  }
+  &__metrics {
+    @include above-large {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    border-top: var(--border-slim-gray);
+  }
+  &__resources-preview {
+
+    min-height: rem(390);
+    padding-block: 0 fluid(40, 50);
+    padding-inline: rem(20);
+
+    @include above-large {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      padding-inline: rem(80) 0;
+      padding-block: 0 rem(80);
+      border-left: var(--border-slim-gray);
+    }
+  }
+
+  &__advantages {
+    position: relative;
+    z-index: 2;
+    background-color: var(--gray-08);
+    border-block: var(--border-slim-gray);
+    &-list {
+      @include above-medium {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    &-item {
+      padding-block: rem(30);
+      &:not(:last-child) {
+        border-bottom: var(--border-slim-gray);
+      }
+      @include above-medium {
+        padding-inline: fluid(0, 80);
+        padding-block: fluid(0, 40);
+
+        &:not(:last-child) {
+          border-right: var(--border-slim-gray);
+        }
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

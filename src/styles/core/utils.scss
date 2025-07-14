@@ -19,3 +19,38 @@
   -webkit-line-clamp: 3;
 }
 
+.full-vw-line {
+  position: relative;
+  &::before,
+  &::after {
+    position: absolute;
+    width: calc((100vw - var(--container-width)) / 2);
+    height: rem(1);
+    background-color: var(--gray-15);
+  }
+  &--top {
+    &::before {
+      content: "";
+      bottom: 100%;
+    }
+  }
+  &--bottom {
+    &::after {
+      content: "";
+      top: 100%;
+    }
+  }
+
+  &--left {
+    &::before,
+    &::after {
+      right: 100%;
+    }
+  }
+  &--right {
+    &::before,
+    &::after {
+      left: 100%;
+    }
+  }
+}

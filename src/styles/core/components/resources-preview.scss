@@ -1,0 +1,38 @@
+@use "../helpers/" as *;
+.resources-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  row-gap: fluid(20, 30);
+  position: relative;
+  
+  &__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include large {
+      margin-left: calc(var(--container-padding-x) * -1);
+    }
+  }
+
+  &__title {
+    line-height: 1.5;
+  }
+  &__subtitle {
+    color: var(--gray-60);
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(4, 14);
+  }
+  &__button {
+    @include x-small {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

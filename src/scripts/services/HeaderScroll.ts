@@ -13,7 +13,7 @@ class HeaderScroll {
     this.bindEvents();
   }
   onScroll = () => {
-    if (window.scrollY >= 200) {
+    if (window.scrollY >= 100) {
       this.headerElement?.classList.add(this.stateClasses.isScrolled);
     }else{
       this.headerElement?.classList.remove(this.stateClasses.isScrolled);
