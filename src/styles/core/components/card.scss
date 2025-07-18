@@ -1,0 +1,70 @@
+@use "../helpers/" as *;
+.card {
+  display: grid;
+  grid-template-columns: 37.5% auto;
+  @include large {
+    grid-template-columns: 1fr;
+  }
+  &__preview {
+    --cardPreviewIconSize: #{fluid(50, 80)};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: fluid(20, 60);
+    &:not(:last-child) {
+      @include large {
+        border-bottom: var(--border-slim-gray);
+      }
+    }
+    @include large {
+      padding-right: 0;
+      padding-block: rem(50);
+    }
+    @include above-large {
+      padding-block: rem(80);
+      padding-right: rem(80);
+    }
+
+    &-main {
+      display: grid;
+      row-gap: fluid(20, 50);
+    }
+    &-info {
+      display: grid;
+      row-gap: fluid(6, 16);
+    }
+    &-icon {
+      width: var(--cardPreviewIconSize);
+      height: var(--cardPreviewIconSize);
+    }
+  }
+  &__body {
+    padding-block: rem(80);
+    padding-left: rem(80);
+
+    @include large {
+      padding-left: 0;
+      padding-block: rem(30);
+    }
+    @include above-large {
+      border-left: var(--border-slim-gray);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    &--2-cols {
+      grid-template-columns: repeat(2, 1fr);
+      gap: fluid(10, 30);
+    }
+    @include medium {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: fluid(4, 20);
+  }
+}
