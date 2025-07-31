@@ -270,6 +270,7 @@
             </a>
           </div>
         </header>
+
         <div class="section__body tabs" data-js-tabs>
           <h3 class="visually-hidden" id="blog-category-title">Blog category</h3>
           <header class="tabs__header">
@@ -282,7 +283,6 @@
                 aria-controls="tabpanel-1"
                 aria-selected="true"
                 data-js-tabs-button
-                aria-selected="true"
               >
                 All
               </button>
@@ -293,7 +293,6 @@
                 id="tab-2"
                 role="tab"
                 aria-controls="tabpanel-2"
-                aria-selected="true"
                 data-js-tabs-button
                 aria-selected="false"
                 tabindex="-1"
@@ -307,7 +306,6 @@
                 id="tab-3"
                 role="tab"
                 aria-controls="tabpanel-3"
-                aria-selected="true"
                 data-js-tabs-button
                 aria-selected="false"
                 tabindex="-1"
@@ -321,7 +319,6 @@
                 id="tab-4"
                 role="tab"
                 aria-controls="tabpanel-4"
-                aria-selected="true"
                 data-js-tabs-button
                 aria-selected="false"
                 tabindex="-1"
@@ -335,7 +332,6 @@
                 id="tab-5"
                 role="tab"
                 aria-controls="tabpanel-5"
-                aria-selected="true"
                 data-js-tabs-button
                 aria-selected="false"
                 tabindex="-1"
@@ -349,7 +345,6 @@
                 id="tab-6"
                 role="tab"
                 aria-controls="tabpanel-6"
-                aria-selected="true"
                 data-js-tabs-button
                 aria-selected="false"
                 tabindex="-1"
@@ -358,12 +353,13 @@
               </button>
             </div>
           </header>
+
           <div class="tabs__body">
             <div
               class="tabs__content is-active"
               id="tabpanel-1"
               aria-labelledby="tab-1"
-              tabindex="0"
+              aria-hidden="false"
               data-js-tabs-content
             >
               <ul class="list">
@@ -504,12 +500,7 @@
                       <div class="blog-card__actions blog-actions">
                         <ul class="blog-actions__list">
                           <li class="blog-actions__item">
-                            <button
-                              class="blog-actions__button"
-                              type="button"
-                              aria-label="dislike"
-                              title="dislike"
-                            >
+                            <button class="blog-actions__button" type="button" aria-label="dislike" title="dislike">
                               <span class="blog-actions__icon-wrapper">
                                 <svg
                                   width="24"
@@ -603,9 +594,7 @@
                       <div class="blog-card__info">
                         <h4 class="blog-card__title">The Mars Colonization Challenge</h4>
                         <div class="blog-card__description">
-                          <p>
-                            Exploring the technical and logistical challenges of human colonization on Mars.
-                          </p>
+                          <p>Exploring the technical and logistical challenges of human colonization on Mars.</p>
                         </div>
                       </div>
                       <div class="blog-card__actions blog-actions">
@@ -691,23 +680,23 @@
               </ul>
             </div>
 
-            <div class="tabs__content" id="tabpanel-2" aria-labelledby="tab-2" tabindex="0" data-js-tabs-content>
+            <div class="tabs__content" id="tabpanel-2" aria-labelledby="tab-2" aria-hidden="true" data-js-tabs-content>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, veniam.
             </div>
 
-            <div class="tabs__content" id="tabpanel-3" aria-labelledby="tab-3" tabindex="0" data-js-tabs-content>
+            <div class="tabs__content" id="tabpanel-3" aria-labelledby="tab-3" aria-hidden="true" data-js-tabs-content>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, veniam.
             </div>
 
-            <div class="tabs__content" id="tabpanel-4" aria-labelledby="tab-4" tabindex="0" data-js-tabs-content>
+            <div class="tabs__content" id="tabpanel-4" aria-labelledby="tab-4" aria-hidden="true" data-js-tabs-content>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, veniam.
             </div>
 
-            <div class="tabs__content" id="tabpanel-5" aria-labelledby="tab-5" tabindex="0" data-js-tabs-content>
+            <div class="tabs__content" id="tabpanel-5" aria-labelledby="tab-5" aria-hidden="true" data-js-tabs-content>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, veniam.
             </div>
 
-            <div class="tabs__content" id="tabpanel-6" aria-labelledby="tab-6" tabindex="0" data-js-tabs-content>
+            <div class="tabs__content" id="tabpanel-6" aria-labelledby="tab-6" aria-hidden="true" data-js-tabs-content>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, veniam.
             </div>
           </div>

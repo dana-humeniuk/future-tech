@@ -1,1 +1,28 @@
 @use "../helpers" as *;
+
+.person-card {
+  --personCardImageSize: #{fluid(60, 80)};
+  display: flex;
+  align-items: center;
+  column-gap: fluid(8, 16);
+  &__image {
+    align-self: start;
+    width: var(--personCardImageSize);
+    height: var(--personCardImageSize);
+    border-radius: 50%;
+    background-color: var(--gray-15);
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+  }
+  &__name {
+    font-size: fluid(18, 20);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  &__department {
+    color: var(--gray-60);
+  }
+}

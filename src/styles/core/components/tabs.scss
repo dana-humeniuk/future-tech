@@ -1,1 +1,54 @@
 @use "../helpers" as *;
+
+.tabs {
+  &__header {
+    padding-block: fluid(20, 50);
+    border-bottom: var(--border-slim-gray);
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  &__buttons {
+    display: grid;
+    column-gap: fluid(14, 20);
+    grid-template-columns: repeat(6, 1fr);
+
+    width: max-content;
+  }
+  &__button {
+    width: rem(250);
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding-block: fluid(18, 30);
+    padding-inline: rem(10);
+    border-radius: fluid(7, 8);
+    background-color: transparent;
+    color: var(--gray-60);
+    font-weight: 400;
+    border: var(--border-slim-gray);
+    transition: var(--transition-base);
+    @include small {
+      font-size: rem(14);
+      width: rem(150);
+    }
+    &.is-active {
+      font-weight: 500;
+      background-color: var(--gray-10);
+      color: var(--color-white);
+      pointer-events: none;
+    }
+    &:hover {
+      border: var(--border-slim-accent);
+      background-color: var(--color-opacity-accent);
+      color: var(--color-white);
+    }
+  }
+  &__content {
+    &:not(.is-active) {
+      display: none;
+    }
+    &:focus-visible {
+      outline-offset: -1rem;
+    }
+  }
+}

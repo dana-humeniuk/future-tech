@@ -1,1 +1,56 @@
 @use "../helpers" as *;
+
+.blog-card {
+  padding-block: fluid(40, 80);
+  display: grid;
+  grid-template-columns: 24% 1fr auto;
+  align-items: start;
+  column-gap: fluid(8, 50);
+  @include large {
+    grid-template-columns: 1fr auto;
+    row-gap: rem(30);
+  }
+
+  &__date {
+    display: inline-block;
+    font-size: fluid(16, 20);
+    font-weight: 600;
+    color: var(--gray-60);
+    margin-bottom: fluid(20, 30);
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(4, 10);
+    margin-bottom: fluid(20, 30);
+  }
+  &__title {
+    color: var(--color-white);
+  }
+  &__description {
+    color: var(--gray-60);
+  }
+
+  &__author {
+    @include large {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+  &__link {
+    align-self: center;
+    @include large {
+      align-self: start;
+      padding: rem(12) rem(16);
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+  &__body {
+    @include large {
+      order: 1;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+  }
+}
