@@ -5,4 +5,8 @@
   background-color: var(--gray-10);
   border-radius: fluid(10, 12);
   border: var(--border-slim-gray);
+  &--slim {
+    padding: fluid(20, 30);
+    border-radius: fluid(8, 13);
+  }
 }

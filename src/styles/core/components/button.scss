@@ -37,4 +37,7 @@
       padding: rem(10) rem(14);
     }
   }
+  &--dark-gray {
+    background-color: var(--gray-10);
+  }
 }

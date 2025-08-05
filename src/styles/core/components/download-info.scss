@@ -1,0 +1,36 @@
+@use "../helpers/" as *;
+.download-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: rem(50);
+  align-items: center;
+  padding: rem(30);
+  @include x-large {
+    column-gap: rem(30);
+    padding: rem(20);
+  }
+
+  &__team {
+    background-color: var(--gray-08);
+    border-radius: rem(12);
+    border: none;
+    @include x-large {
+      padding: rem(8);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: fluid(2, 4);
+  }
+  &__subtitle {
+    @include x-large {
+      font-size: rem(20);
+    }
+  }
+  &__title {
+    @include x-large {
+      font-size: rem(14);
+    }
+  }
+}
