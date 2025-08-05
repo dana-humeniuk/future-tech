@@ -1,0 +1,26 @@
+@use "../helpers/" as *;
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(30, 40);
+  align-items: center;
+  max-width: rem(600);
+  margin: 0 auto;
+  &__author {
+    --personCardImageSize: #{fluid(50, 60)};
+  }
+  &__body {
+    position: relative;
+    text-align: center;
+    color: var(--color-white);
+    padding: fluid(20, 30);
+    padding-top: fluid(30, 50);
+  }
+  &__rating-view {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

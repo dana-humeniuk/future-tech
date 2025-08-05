@@ -1,0 +1,48 @@
+@use "../helpers/" as *;
+
+.bordered-grid {
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  &--2-cols {
+    --columns: 2;
+  }
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingY: #{rem(80)};
+    --itemPaddingX: #{rem(50)};
+    @include large {
+      --itemPaddingX: #{rem(40)};
+      --itemPaddingY: #{rem(40)};
+      --columns: 1;
+    }
+    
+    .bordered-grid__item {
+      border-bottom: var(--border-slim-gray);
+      @include above-large {
+        border-bottom: none;
+        //Елементи в 1 і 2 колонках
+        &:nth-child(3n - 2),
+        &:nth-child(3n - 1) {
+          padding-right: var(--itemPaddingX);
+          border-right: var(--border-slim-gray);
+        }
+        //Елементи 2 колонці
+        &:nth-child(3n - 1) {
+          @include full-vw-centered-line(bottom);
+        }
+
+        //Елементи в 2 і 3 колонках
+        &:nth-child(3n - 1),
+        &:nth-child(3n) {
+          padding-left: var(--itemPaddingX);
+        }
+       
+      }
+    }
+  }
+  &__item {
+    padding-block: var(--itemPaddingY);
+  }
+}

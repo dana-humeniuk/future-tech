@@ -42,3 +42,17 @@
   width: $size;
   height: $size;
 }
+
+@mixin full-vw-centered-line($property: top) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    #{$property}: 0; //top, bottom
+    left: 50%;
+    translate: -50% 0;
+    width: 100vw;
+    height: 1px;
+    background-color: var(--gray-15);
+  }
+}
