@@ -1,0 +1,81 @@
+@use "../helpers/" as *;
+
+.about {
+  padding-block: fluid(40, 120);
+  background-color: var(--gray-10);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(40, 100);
+    @include small {
+      row-gap: rem(40);
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: fluid(20, 80);
+    grid-template-areas:
+      "image subtitle"
+      "image title"
+      "image description";
+    @include medium {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "image subtitle"
+        "title title"
+        "description description";
+      column-gap: fluid(20, 50);
+    }
+  }
+  &__image {
+    --imageSize: #{fluid(60, 150)};
+    width: var(--imageSize);
+    height: var(--imageSize);
+    object-fit: contain;
+    object-position: center;
+    grid-area: image;
+    @include medium {
+      margin-bottom: rem(20);
+    }
+  }
+  &__subtitle {
+    grid-area: subtitle;
+    margin-bottom: rem(16);
+    align-self: center;
+    @include medium {
+      margin-bottom: rem(20);
+    }
+  }
+  &__title {
+    grid-area: title;
+    margin-bottom: rem(30);
+    @include large {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__list {
+    padding: rem(20);
+    background-color: var(--gray-08);
+    border: var(--border-slim-gray);
+    border-radius: fluid(10, 12);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rem(20);
+   
+    @include large {
+      grid-template-columns: 1fr;
+      row-gap: rem(10);
+      padding: rem(10);
+    }
+    
+  }
+}

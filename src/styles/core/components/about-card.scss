@@ -1,0 +1,27 @@
+@use "../helpers/" as *;
+
+.about-card {
+  display: grid;
+  row-gap: fluid(10, 20);
+
+  &__link {
+    display: grid;
+    row-gap: fluid(2, 4);
+    align-items: center;
+    min-height: var(--circleSize);
+  }
+
+  &__title {
+    font-family: var(--font-family-base);
+    font-size: fluid(16, 22);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: fluid(10, 20);
+    transition: var(--transition-base);
+    @include hover {
+      color: var(--color-accent);
+      
+    }
+  }
+}

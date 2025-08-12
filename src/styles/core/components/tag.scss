@@ -1,6 +1,7 @@
 @use "../helpers/" as *;
 
 .tag {
+  max-width: max-content;
   display: flex;
   align-self: start;
   padding: fluid(4, 6) fluid(8, 10);
